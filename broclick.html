@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ 
+#no{
+    background-color:red;
+    border:none;
+    color:white;
+    border-radius:5px;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+    font-size:2em;
+}
+
+.container{
+    display:flex;
+    justify-content:space-around;
+
+}
+
+.container2{
+    
+}
+
+.container3{
+    display:flex;
+    justify-content:center;
+}
+
+#yes{
+    margin-right:12px;
+    border:none;
+    background-color:rgb(25, 214, 25);
+    color:white;
+    border-radius:5px;
+   padding:10px;
+   padding-left:20px;
+   padding-right:20px;
+   font-size:2em;
+}
+
+p{
+    display:flex;
+}
+
+.pdiv{
+    margin-top:-30px;
+    display:flex;
+    justify-content:center;
+    font-size:2.5em;
+}
+
+#view{
+    color:rgb(226, 6, 6);
+    font-size:5em;
+    font-family:arial;
+    padding-top:50px;
+    display:none;
+}
+
+.divView{
+    display:flex;
+    padding:12px;
+    position:absolute;
+    right:450px;
+}
+
+#image{
+    height:100px;
+    width:100px;
+    padding-left:50px;
+    position:relative;
+    right:-180px;
+    border-radius:40%;  
+    display:none;
+
+}
+
+body{
+    background-color:rgb(170, 235, 218)
+}
+
+
+/* #emoji{
+    font-size:10em;
+    position:absolute;
+    right:460px;
+    bottom:40px;
+    padding-top:100px;
+    
+} */
+
+</style>
+
+<body>
+    <div class="pdiv"><p>Will you be my friend</p></div>
+  
+    <div class="container">
+
+     <div class="container2">
+      <div class="container3">
+        <div><button id="yes" onclick="yesClick();">Yes</button></div>
+        <div><button id="no" onclick="clickNo();">No</button></div>
+      </div>
+     </div>
+
+    </div>
+     
+    <div class="divView">
+        <img src="rizz.png.png" id="image" id="image">
+        <h1 id="view">Oahhh</h1>
+    </div>
+    <!-- <h1 id="emoji">😍</h1> -->
+    <script>
+
+function clickNo(){
+    const yesButton = document.getElementById("yes");
+    const currentHeight = parseInt(window.getComputedStyle(yesButton).height);
+    const currentWidth = parseInt(window.getComputedStyle(yesButton).width);
+    const currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize)
+    
+    // Increase size by a certain percentage each time
+    const scaleFactor = 2;
+    const newHeight = currentHeight * scaleFactor;
+    const newWidth = currentWidth * scaleFactor;
+    const newFontSize = currentFontSize * scaleFactor;
+
+    yesButton.style.backgroundColor = "rgb(25, 214, 25);";
+    yesButton.style.height = newHeight + "px";
+    yesButton.style.width = newWidth + "px";
+    yesButton.style.fontSize = newFontSize + "px";
+}
+
+function yesClick(){
+     document.querySelector("#view").style.display = "block";
+    // document.querySelector("#emoji").style.display = "block";
+     document.querySelector("img").style.display = "block";
+     document.querySelector(".container").style.display = "none";
+     document.querySelector(".pdiv").style.display = "none";
+     
+}
+
+    </script>
+</body>
+</html>
